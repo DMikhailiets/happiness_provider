@@ -111,15 +111,6 @@ body {
   color: #45404f;
 }
 
-.header {
-  display: flex;
-  background-color: #E5FAF5;
-  color: white;
-  height: 6vh;
-  justify-content: center;
-  align-items: center;
-}
-
 .goodsImageWrapper {
   object-fit: cover;
   object-position: center;
