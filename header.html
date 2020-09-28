@@ -8,38 +8,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap" rel="stylesheet">
 </head>
 <body id="root">
-    <header class="header">
-        <a class="header__logo" href="">
+    <header id="Header"class="Header">
+        <a class="Header-Logo" href="">
             Header Logo
         </a>
-        <nav class="header__nav">
-            <div class="header__list">
-                <a class="list__item">About us</a>
-                <a class="list__item">Bla </a>
-                <a class="list__item">Options</a>
-                <a class="list__item">Canon</a>
-                <a class="list__item">Acer</a>
-            </div>
+        <nav id="Header-Nav" class="Header-Nav">
+            <a class="Nav-Item">Девушкам</a>
+            <a class="Nav-Item">Мужчинам</a>
+            <a class="Nav-Item">Все для секса</a>
+            <a class="Nav-Item">Парам</a>
+            <a class="Nav-Item">Одежда</a>
+            <a class="Nav-Item">Акции</a>
+            <a class="Nav-Item">Скидки</a>
+            <a class="Nav-Item">
+                <img class="Cart" src="./images/cart.png" alt="">
+                <span> Корзина</span>  
+            </a>     
+            <a class="Nav-Item">
+                <img class="Cart" src="./images/user.png" alt="">
+                <span> Login</span>
+            </a>          
         </nav>
-    </header>
-    <header class="header__mobile">
-        <div class="header__mobile__top">
-            <a class="header__logo" href="">
-                Header Logo
-            </a>
-            <div id="header__burger"class="header__burger" onclick="document.getElementById('header_nav').classList.toggle('active');document.getElementById('root').classList.toggle('lock');document.getElementById('header__burger').classList.toggle('active')">
-                <span></span>
-            </div>
+        <div id="Header-Burger"class="Header-Burger" onclick="burgerIsActive()">
+            <span class="Burger-FirstStrip"></span>
+            <span class="Burger-SecondStrip"></span>
+            <span class="Burger-ThirdStrip"></span>
         </div>
-        <nav id="header_nav"class="header__nav__mobile">
-            <div class="header__list__mobile">
-                <a class="list__item">About us</a>
-                <a class="list__item">Bla </a>
-                <a class="list__item">Options</a>
-                <a class="list__item">Canon</a>
-                <a class="list__item">Acer</a>
-            </div>
-        </nav>
     </header>
     <div class="content">
         <div class="container">
