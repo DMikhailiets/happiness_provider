@@ -1,3 +1,6 @@
+@import url("/dist/header.css");
+@import url("/dist/content.css");
+
 body {
   margin: 0 auto;
   font-family: "Montserrat", sans-serif;

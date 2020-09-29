@@ -50,6 +50,10 @@ body {
   height: 50px;
 }
 
+.Header-Logo-Img {
+  width: 150px;
+}
+
 .Nav-Item {
   display: flex;
   justify-content: space-between;
@@ -58,7 +62,7 @@ body {
   min-height: 75px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 925px) {
   body.lock {
     overflow: hidden;
   }
