@@ -1,20 +1,11 @@
-$primaryColor: #45404f; 
-$forPhoneOnlyIndent: 4vw;
-$forTabletPortraitUpIndent: 2vw;
-$forTabletLandscapeIndent: 2vw;
-$forDesktopUpIndent: 1vw;
-$forBigDesktopIndent: 0.5vw;
+@import "variables.scss";
 
-.Header-Burger{grid-area: Header-Burger;}
-.Header-Nav{grid-area: Header-Nav;}
-.Header-Logo{grid-area: Header-Logo;}
-
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Montserrat', sans-serif;
-}
+// body {
+//     margin: 0;
+//     padding: 0;
+//     height: 100%;
+//     font-family: 'Montserrat', sans-serif;
+// }
 
 .Header {
     position: fixed;
@@ -29,7 +20,8 @@ body {
     grid-template-areas: "Header-Logo Header-Burger Header-Nav";
 }
 
-.Header-Nav { 
+.Header-Nav {
+    grid-area: Header-Nav; 
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -38,14 +30,17 @@ body {
 }
 
 .Header-Burger {
+    grid-area: Header-Burger;
     height: 50px;
 }
 
 .Header-Logo {
+    grid-area: Header-Logo;
     display: flex;
     justify-content: start;
     align-items: center;
-    max-width: 100%;
+    min-width: 100%;
+    margin-left: 2vw;
     color: white;
     height: 50px;
 }
@@ -59,8 +54,15 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-right: 1vw;
-
     min-height: 75px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+
+.Nav-Item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 @media(max-width: 925px) {
@@ -118,15 +120,16 @@ body {
     }
 }
 
-    .Burger-FirstStrip, .Burger-ThirdStrip, .Burger-SecondStrip {
-        background-color: white;
-        width: 40px;
-        height: 2px;
-        left: 0;
-        transition: all 0.2s;
-    }
+.Burger-FirstStrip, .Burger-ThirdStrip, .Burger-SecondStrip {
+    background-color: white;
+    width: 40px;
+    height: 2px;
+    left: 0;
+    transition: all $transition;
+}
 
 .Cart {
     margin-right: 1vw;
     width: 15px;
 }
+

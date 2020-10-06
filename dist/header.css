@@ -1,20 +1,5 @@
-.Header-Burger {
-  grid-area: Header-Burger;
-}
-
-.Header-Nav {
-  grid-area: Header-Nav;
-}
-
-.Header-Logo {
-  grid-area: Header-Logo;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "Montserrat", sans-serif;
+:root {
+  font-size: 16px;
 }
 
 .Header {
@@ -31,6 +16,7 @@ body {
 }
 
 .Header-Nav {
+  grid-area: Header-Nav;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -38,14 +24,17 @@ body {
 }
 
 .Header-Burger {
+  grid-area: Header-Burger;
   height: 50px;
 }
 
 .Header-Logo {
+  grid-area: Header-Logo;
   display: flex;
   justify-content: start;
   align-items: center;
-  max-width: 100%;
+  min-width: 100%;
+  margin-left: 2vw;
   color: white;
   height: 50px;
 }
@@ -60,6 +49,13 @@ body {
   align-items: center;
   margin-right: 1vw;
   min-height: 75px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.Nav-Item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 @media (max-width: 925px) {

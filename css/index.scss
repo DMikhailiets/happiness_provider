@@ -1,0 +1,182 @@
+@import "variables.scss";
+
+@mixin forPhone {
+    @media (max-width: 599px) { @content; }
+}
+@mixin forTabletPortrait {
+    @media (min-width: 600px) { @content; }
+}
+@mixin forTabletLandscape {
+    @media (min-width: 900px) { @content; }
+}
+@mixin forDesktop {
+    @media (min-width: 1200px) { @content; }
+}
+@mixin forBigDesktop {
+    @media (min-width: 1800px) { @content; }
+}
+  
+.goodsContainer {
+    display: grid;
+    //grid-template-columns: repeat(auto-fit, minmax(20vw, auto));
+    //background: url('/images/SH.png') center / cover;
+    justify-content: center;
+    align-content: center;
+    background-color: #ffffff;
+    background-attachment:fixed;
+    @include forPhone {
+        display: grid;
+        grid-row-gap: $phoneIndent;
+        grid-column-gap: $phoneIndent;
+        grid-template-columns: 1fr;
+        padding: $phoneIndent $phoneIndent;
+    }
+    @include forTabletPortrait {
+        display: grid;
+        grid-row-gap: $tabletPortraitIndent;
+        grid-column-gap: $tabletPortraitIndent;
+        grid-template-columns: repeat(2, 1fr);
+        padding: $tabletPortraitIndent $tabletPortraitIndent;
+    }
+    @include forTabletLandscape {
+        display: grid;
+        grid-row-gap: $tabletLandscapeIndent;
+        grid-column-gap: $tabletLandscapeIndent;
+        padding: $tabletLandscapeIndent $tabletLandscapeIndent;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include forDesktop {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 240px));
+        grid-column-gap: $desktopIndent;
+        grid-row-gap: $desktopIndent;
+        padding: $desktopIndent $desktopIndent; 
+    }
+    @include forBigDesktop {
+        display: grid;
+        grid-row-gap: $bigDesktopIndent;
+        grid-column-gap: $bigDesktopIndent;
+        padding: $bigDesktopIndent $bigDesktopIndent;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+    }
+}
+
+.goodItem {
+  text-decoration: none;
+    border: 1px solid rgb(225, 225, 225);
+    background-color: white;
+    padding: 2vw;
+    @include forPhone {
+        padding: $phoneIndent;
+    }
+    @include forTabletPortrait {
+        padding: $tabletPortraitIndent;
+    }
+    @include forTabletLandscape {
+        padding: $tabletLandscapeIndent;
+    }
+    @include forDesktop {
+        padding: $desktopIndent; 
+    }
+    @include forBigDesktop {
+        padding: $bigDesktopIndent;
+    }
+}
+
+.goodItem:hover {
+  transition: all $transition;
+  box-shadow: 0px 0px 5px 4px rgba(34, 60, 80, 0.1);
+  transform: scale(1.01);
+}
+.goodContentWrapper {
+  height: 100%;
+  background: url('/images/SH.png') center / cover;
+  width: 50%;
+}
+
+.goodsImageWrapper1 {
+  width: 50%;
+}
+
+.goodTitle {
+  font-size: $desktopTitle;
+  @include forPhone {
+    font-size: $desktopTitle;
+  }
+  @include forTabletPortrait {
+    font-size: $desktopTitle;
+  }
+  @include forTabletLandscape {
+    font-size: $desktopTitle;
+  }
+  @include forDesktop {
+    font-size: $desktopTitle;
+  }
+  @include forBigDesktop {
+    font-size: $desktopTitle;
+  }
+}
+
+.goodDescription {
+  color: #45404f;
+  font-size: $desktopText;
+  @include forPhone {
+    font-size: $desktopText;
+  }
+  @include forTabletPortrait {
+    font-size: $desktopText
+  }
+  @include forTabletLandscape {
+    font-size: $desktopText;
+  }
+  @include forDesktop {
+    font-size: $desktopText;
+  }
+  @include forBigDesktop {
+    font-size: $desktopText;
+  }
+}
+
+.goodsImageWrapper {
+  //position: relative;
+  object-fit: cover;
+  object-position: center;
+}
+
+.goodsImage {
+  //position: absolute;
+  width: 100%;
+  //border-radius: 4vw 4vw 4vw 0;
+}
+
+.button {
+  border-radius: 3000px;
+  background-color: #BEA8E9;
+  color: white;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  width: 40%;
+  height: 32px;  
+}
+.button:hover {
+  background-color: $secondary;
+  cursor: pointer;
+}
+
+.priceButtonContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 2vw;
+}
+
+.goodsPrice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+}

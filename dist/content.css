@@ -1,19 +1,30 @@
-.MainSection-Dalery {
-  grid-area: MainSection-Dalery;
-}
-
 .Content {
-  margin-top: 100px;
-  margin-right: 10vw;
-  margin-left: 10vw;
+  margin: 100px;
 }
 
+@media (max-width: 925px) {
+  .Content {
+    margin: 100px 25px;
+    font-size: 10vw;
+  }
+}
+.Title {
+  color: #45404f;
+  font-weight: 700px;
+  font-size: 70px;
+}
+
+@media (max-width: 925px) {
+  .Title {
+    font-size: 10vw;
+  }
+}
 .MainSection {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr 1fr;
   width: 100%;
-  height: 500px;
+  height: 70vh;
 }
 
 .MainSection-Galery {
@@ -67,8 +78,9 @@
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  margin: 2vw auto;
-  height: 30px;
+  margin: 100px auto;
+  margin-bottom: 50px;
+  height: 40px;
   width: 100%;
 }
 .Search :hover {
@@ -94,7 +106,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 0 30px 30px 0;
-  border: 16px solid #45404f;
+  border: 21px solid #45404f;
   width: 10%;
   height: 100%;
   text-decoration: none;
@@ -104,4 +116,83 @@
 
 .Search-Button-Img {
   width: 20px;
+}
+
+.Catalog {
+  height: 100%;
+  padding-top: 100px;
+  padding-right: 10vw;
+  padding-left: 10vw;
+  padding-bottom: 100px;
+  background: url(../images/background.jpg) center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+.Product-Title {
+  font-size: 25px;
+}
+
+.Products {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.Product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+  color: #45404f;
+  transition: all 0.2s ease-out;
+}
+
+.Product-Img {
+  width: 250px;
+}
+
+.Product:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.Product:hover .Product-Title {
+  text-shadow: 6px 8px 8px rgba(34, 60, 80, 0.8);
+}
+
+.GoodsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vw;
+  justify-content: center;
+  align-content: center;
+  align-items: stretch;
+  justify-items: stretch;
+  width: 100%;
+}
+
+.absolute {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  width: 500px;
+  height: 200px;
+  color: white;
+  background-color: black;
+}
+
+.header {
+  width: 100px;
+  height: 40px;
+  background-color: red;
+}
+
+.relative {
+  position: relative;
 }

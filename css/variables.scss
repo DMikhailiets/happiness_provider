@@ -1,0 +1,46 @@
+:root {
+    font-size: 16px;
+}
+
+//////////////////Colors//////////////////////
+
+$primaryColor: #45404f; 
+$secondary: #9583bd;
+
+//////////////////Ident///////////////////////
+
+$phoneIndent: 4vw;
+$tabletPortraitIndent: 2vw;
+$tabletLandscapeIndent: 2vw;
+$desktopIndent: 1vw;
+$bigDesktopIndent: 0.5vw;
+
+//////////////////FontSize////////////////////
+
+$phoneTitle: 10vw;
+$tabletPortraitTitle: 2vw;
+$tabletLandscapeTitle: 2vw;
+$desktopTitle: 1rem;
+$bigDesktopTitle: 0.5vw;
+
+$phoneText: 10rem;
+$tabletPortraitText: 2rem;
+$tabletLandscapeText: 2rem;
+$desktopText: 0.8rem;
+$bigDesktopText: 1.5rem;
+
+$phoneButtonText: 10rem;
+$tabletPortraitButtonText: 2rem;
+$tabletLandscapeButtonText: 2rem;
+$desktopButtonText: 0.8rem;
+$bigDesktopButtonText: 1.5rem;
+
+
+
+//////////////Border-radius///////////////////
+
+$margin: 100px;
+
+///////////////Transition/////////////////////
+
+$transition: 0.2s
