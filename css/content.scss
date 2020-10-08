@@ -1,3 +1,4 @@
+@import "variables.scss";
 $primaryColor: #45404f; 
 $forPhoneOnlyIndent: 4vw;
 $forTabletPortraitUpIndent: 2vw;
@@ -9,6 +10,21 @@ $margin: 100px;
 $titleFontSizeMobile: 10vw;
 $titleFontSizeBase: 70px;
 
+@mixin forPhone {
+    @media (max-width: 599px) { @content; }
+}
+@mixin forTabletPortrait {
+    @media (min-width: 600px) { @content; }
+}
+@mixin forTabletLandscape {
+    @media (min-width: 900px) { @content; }
+}
+@mixin forDesktop {
+    @media (min-width: 1200px) { @content; }
+}
+@mixin forBigDesktop {
+    @media (min-width: 1800px) { @content; }
+}
 
 .Content {
     //margin-top: $margin;
@@ -16,15 +32,12 @@ $titleFontSizeBase: 70px;
     //margin-left: 10vw;
     margin: $margin;
 }
-@media(max-width: 925px) {
-    .Content {
-        margin: $margin 25px;
-        font-size: $titleFontSizeMobile;
-        // margin-right: 25px;
-        // margin-left: 25px;
+@media(max-width: 900px){
+    .Content {   
+        margin-left: 5px;
+        margin-right: 5px;
     }
 }
-
 .Title {    
     color: $primaryColor;
     font-weight : 700px;
@@ -33,12 +46,7 @@ $titleFontSizeBase: 70px;
 @media(max-width: 925px) {
     .Title {
         font-size: $titleFontSizeMobile;
-        // margin-right: 25px;
-        // margin-left: 25px;
     }
-}
-.Product {
-    
 }
 
 .MainSection {
@@ -76,7 +84,6 @@ $titleFontSizeBase: 70px;
 
     background-color: $primaryColor;
 }
-
 
 @media(max-width: 925px) {
     .MainSection {
@@ -161,17 +168,19 @@ $titleFontSizeBase: 70px;
 
 .Catalog {
     //width: 100%;
-    height: 100%;
     padding-top: 100px;
     padding-right: 10vw;
     padding-left: 10vw;
     padding-bottom: 100px;
-    background: url(../images/background.jpg) center / cover no-repeat;
+    background: url(../images/background.jpg) center / cover ;
     background-attachment:fixed;
 }
 
 
 .Product-Title {
+    display: grid;
+    justify-items: center;
+    align-items: center;
     font-size: 25px;
 }
 
@@ -227,26 +236,6 @@ $titleFontSizeBase: 70px;
     width: 100%;
 }
 
-
-// .cart {
-//     :hover {
-//         box-shadow: 6px 8px 8px  rgba(34, 60, 80, 0.8);
-//     }
-// }
-
-.absolute {
-    position: absolute;
-    top: 100px;
-    left: 50px;
-
-    width: 500px;
-    height: 200px;
-
-    color: white;
-    background-color: black;
-
-}
-
 .header {
     width: 100px;
     height: 40px;
@@ -255,4 +244,131 @@ $titleFontSizeBase: 70px;
 
 .relative {
     position: relative;
+}
+
+.Advantage-Image {
+    width: 140px;
+}
+
+
+.Advantage-Cart {
+    transform: scale(1.5);
+    position: relative;
+    top: -20px;
+}
+
+.Advantage-Wallet {
+    transform: scale(0.9);
+    position: relative;
+    top: -20px;
+}
+
+
+.Advantage-Delivery {
+    transform: scale(1.3);
+    position: relative;
+    top: 20px;
+}
+
+.SpecialOffer {
+    margin-top: $margin;
+    padding-right: 10vw;
+    padding-left: 10vw;
+    padding-bottom: $margin;
+    background-color: white;
+}
+
+.TitleSpecial {
+    margin-left: $margin;
+}
+
+.Delivery-Title {
+    margin-top: 54px;
+}
+
+.Footer {
+    height: 100px;
+    background-color: $primaryColor;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    color: white;
+}
+
+@media(max-width: 900px) {
+    .Advantages-Container {
+        display: flex;
+        flex-direction: column;
+    }
+    .Advantage{
+        margin-top: $margin;
+    }
+}
+
+.Providers-Title {
+    margin-top: 100px;
+}
+.ProvidersContainer {
+    display: grid;
+    //grid-template-columns: repeat(auto-fit, minmax(20vw, auto));
+    //background: url('/images/SH.png') center / cover;
+    justify-content: center;
+    align-content: center;
+    background-color: #ffffff;
+    background-attachment:fixed;
+    margin-top: $margin;
+    @include forPhone {
+        display: grid;
+        grid-row-gap: $phoneIndent;
+        grid-column-gap: $phoneIndent;
+        grid-template-columns: 1fr;
+        padding: $phoneIndent $phoneIndent;
+    }
+    @include forTabletPortrait {
+        display: grid;
+        grid-row-gap: $tabletPortraitIndent;
+        grid-column-gap: $tabletPortraitIndent;
+        grid-template-columns: repeat(2, 1fr);
+        padding: $tabletPortraitIndent $tabletPortraitIndent;
+    }
+    @include forTabletLandscape {
+        display: grid;
+        grid-row-gap: $tabletLandscapeIndent;
+        grid-column-gap: $tabletLandscapeIndent;
+        padding: $tabletLandscapeIndent $tabletLandscapeIndent;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include forDesktop {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 240px));
+        grid-column-gap: $desktopIndent;
+        grid-row-gap: $desktopIndent;
+        padding: $desktopIndent $desktopIndent; 
+    }
+    @include forBigDesktop {
+        display: grid;
+        grid-row-gap: $bigDesktopIndent;
+        grid-column-gap: $bigDesktopIndent;
+        padding: $bigDesktopIndent $bigDesktopIndent;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+    }
+}
+
+.Providers {
+    padding-top: 0;
+    margin-top: 100px;
+    background: url(../images/background.jpg) center / cover ;
+    background-attachment:fixed;
+}
+
+.ProviderContainer {
+    background-color: transparent;
+}
+
+.Providers-Title {
+    margin-top: 100px;
+}
+
+.hui {
+    height: 100px;
 }

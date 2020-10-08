@@ -24,6 +24,7 @@
     align-content: center;
     background-color: #ffffff;
     background-attachment:fixed;
+    margin-top: $margin;
     @include forPhone {
         display: grid;
         grid-row-gap: $phoneIndent;
